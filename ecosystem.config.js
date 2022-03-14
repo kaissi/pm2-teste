@@ -22,23 +22,10 @@ module.exports = {
             ref: 'origin/master',
             repo: 'https://github.com/kaissi/pm2-teste.git',
             path: '/workspace',
-            'pre-setup': " \
-                hostname \
-                    && eval '$(ssh-agent -s)' \
-                    && ssh-add
-            ",
-            'post-setup': " \
-                hostname \
-                    && pm2 start ecosystem.config.js --env docker \
-            ",
-            'pre-deploy-local': " \
-                hostname \
-            ",
-            'post-deploy': " \
-                hostname \
-                    && . ${HOME}/.bashrc \
-                    && pm2 reload ecosystem.config.js --env docker \
-            "
+            'pre-setup': "./pre-setup.sh",
+            'post-setup': "./post-setup.sh",
+            'pre-deploy-local': "./pre-deploy-local.sh",
+            'post-deploy': "./post-deploy.sh"
         }
     }
 }
