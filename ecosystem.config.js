@@ -24,9 +24,12 @@ module.exports = {
             path: '/workspace',
             'pre-setup': " \
                 hostname \
+                    && eval '$(ssh-agent -s)' \
+                    && ssh-add
             ",
             'post-setup': " \
                 hostname \
+                    && pm2 start ecosystem.config.js --env docker \
             ",
             'pre-deploy-local': " \
                 hostname \
