@@ -18,7 +18,7 @@ module.exports = {
             "host": [
                 {
                     "host": "172.17.0.2",
-                    "port": 2222
+                    "port": "2222"
                 }
             ],
             "ref": "origin/master",
