@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Hello PM2 from Bash!"
+
+tail -f /dev/null
