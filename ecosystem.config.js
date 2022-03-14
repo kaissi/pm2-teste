@@ -22,9 +22,18 @@ module.exports = {
             ref: 'origin/master',
             repo: 'https://github.com/kaissi/pm2-teste.git',
             path: '/workspace',
-            'pre-deploy-local': 'echo $(hostname)',
+            'pre-setup': ' \
+                $(hostname) \
+            ',
+            'post-setup': ' \
+                $(hostname) \
+            ',
+            'pre-deploy-local': ' \
+                $(hostname) \
+            ',
             'post-deploy': ' \
-                . ${HOME}/.bashrc \
+                $(hostname) \
+                    && . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
             '
         }
