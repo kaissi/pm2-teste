@@ -29,10 +29,10 @@ module.exports = {
                 echo "$(hostname)" \
             ',
             'pre-deploy-local': ' \
-                echo "$(hostname)" \
+                echo $(hostname) \
             ',
             'post-deploy': ' \
-                echo $(hostname) \
+                echo "$(hostname)" \
                     && . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
             '
