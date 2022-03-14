@@ -4,7 +4,7 @@ module.exports = {
         script: 'run',
         interpreter: '/bin/bash',
         autorestart: true,
-        watch: 'true'
+        watch: '.'
     }],
 
     deploy: {
