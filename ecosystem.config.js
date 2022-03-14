@@ -3,7 +3,7 @@ module.exports = {
         name: 'Bash',
         script: 'run',
         interpreter: '/bin/bash',
-        autorestart: 'true',
+        autorestart: true,
         watch: 'true'
     }],
 
