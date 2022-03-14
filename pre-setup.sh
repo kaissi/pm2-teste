@@ -2,7 +2,7 @@
 
 echo "[pre-setup] hostname=$(hostname)"
 $PWD
-if [ -d source ]; then
+if [ -d /workspace/source ]; then
     rm -rf source
 fi
 
