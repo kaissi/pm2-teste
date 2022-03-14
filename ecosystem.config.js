@@ -28,14 +28,14 @@ module.exports = {
             'post-setup': ' \
                 echo "$(hostname)" \
             ',
-            'pre-deploy-local': ' \
-                echo \"$(hostname)\" \
-            ',
-            'post-deploy': ' \
+            'pre-deploy-local': " \
+                echo '$(hostname)' \
+            ",
+            'post-deploy': " \
                 echo \"$(hostname)\" \
                     && . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
-            '
+            "
         }
     }
 }
