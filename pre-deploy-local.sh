@@ -1,4 +1,4 @@
 #!/bin/bash
 
-hostname
+echo "[pre-deploy-local] hostname=$(hostname)"
 

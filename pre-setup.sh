@@ -1,6 +1,4 @@
 #!/bin/bash
 
-hostname \
-    && eval "$(ssh-agent -s)" \
-    && ssh-add
+echo "[pre-setup] hostname=$(hostname)"
 
