@@ -6,7 +6,7 @@ module.exports = {
         autorestart: true,
         watch: [
             '.'
-    	],
+    	]
     }],
 
     deploy: {
@@ -36,7 +36,7 @@ module.exports = {
                 printf "[post-deploy] hostname=%s\n" $(hostname) \
                     && . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
-            ',
-        },
-    },
+            '
+        }
+    }
 }
