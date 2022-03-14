@@ -6,18 +6,16 @@ module.exports = {
         autorestart: true,
         watch: [
             '.'
-    	]
+    	],
     }],
 
     deploy: {
         docker: {
             user: 'linuxserver.io',
-            host: [
-                {
-                    'host': '172.17.0.2',
-                    'port': '2222'
-                }
-            ],
+            host: [{
+                'host': '172.17.0.2',
+                'port': '2222'
+            }],
             ssh_options: [
                 'StrictHostKeyChecking=no',
                 'VisualHostKey=yes'
@@ -25,12 +23,20 @@ module.exports = {
             ref: 'origin/master',
             repo: 'https://github.com/kaissi/pm2-teste.git',
             path: '/workspace',
-            'pre-deploy-local': 'printf "hostname=%s" $(hostname)',
+            'pre-setup': ' \
+                printf "[pre-setup] hostname=%s" $(hostname) \
+            ',
+            'post-setup': ' \
+                printf "[post-setup] hostname=%s" $(hostname) \
+            ',
+            'pre-deploy-local': ' \
+                printf "[pre-deploy-local] hostname=%s" $(hostname) \
+            ',
             'post-deploy': ' \
+                printf "[post-deploy] hostname=%s" $(hostname) \
                 . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
             ',
-            'pre-setup': 'printf "hostname=%s" $(hostname)'
-        }
-    }
+        },
+    },
 }
