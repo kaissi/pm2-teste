@@ -32,7 +32,7 @@ module.exports = {
                 echo $(hostname) \
             ',
             'post-deploy': ' \
-                echo "$(hostname)" \
+                echo '$(hostname)' \
                     && . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
             '
