@@ -17,15 +17,12 @@ module.exports = {
                 'port': '2222'
             }],
             ssh_options: [
-                'StrictHostKeyChecking=no',
-                'VisualHostKey=yes'
+                'StrictHostKeyChecking=no'
             ],
             ref: 'origin/master',
             repo: 'https://github.com/kaissi/pm2-teste.git',
             path: '/workspace',
-            'pre-deploy-local': ' \
-                echo "[pre-deploy-local] hostname=$(hostname)" \
-            ',
+            'pre-deploy-local': 'echo "[pre-deploy-local] hostname=$(hostname)"',
             'post-deploy': ' \
                 . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
