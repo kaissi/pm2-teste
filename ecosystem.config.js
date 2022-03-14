@@ -29,7 +29,7 @@ module.exports = {
                 printf '[post-setup] hostname=%s\n' $(hostname) \
             ",
             'pre-deploy-local': " \
-                printf '[pre-deploy-local] hostname=%s\n' $(hostname) \
+                echo '[pre-deploy-local] hostname=$(hostname)' \
             ",
             'post-deploy': " \
                 printf '[post-deploy] hostname=%s\n' $(hostname) \
