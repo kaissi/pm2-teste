@@ -15,10 +15,12 @@ module.exports = {
         "docker": {
             "key": "~/.ssh/id_rsa",
             "user": "linuxserver.io",
-            "host": {
-                "host": "172.17.0.2",
-                "port": 2222
-            },
+            "host": [
+                {
+                    "host": "172.17.0.2",
+                    "port": 2222
+                }
+            ],
             "ref": "origin/master",
             "repo": "https://github.com/kaissi/pm2-teste.git",
             "path": "/workspace",
