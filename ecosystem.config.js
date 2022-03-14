@@ -5,7 +5,7 @@ module.exports = {
         interpreter: '/bin/bash',
         autorestart: true,
         watch: [
-            '.'
+            '/workspace/source'
     	]
     }],
 
