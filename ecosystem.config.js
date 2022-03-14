@@ -24,8 +24,7 @@ module.exports = {
             repo: 'https://github.com/kaissi/pm2-teste.git',
             path: '/workspace',
             'post-deploy': ' \
-                echo "[post-deploy] hostname=$(hostname)" \
-                    && . ${HOME}/.bashrc \
+                . ${HOME}/.bashrc \
                     && pm2 reload ecosystem.config.js --env docker \
             '
         }
