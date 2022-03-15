@@ -13,8 +13,7 @@ module.exports = {
         docker: {
             user: '${USER}',
             host: [{
-                'host': 'localhost',
-                'port': '22'
+                'host': 'localhost'
             }],
             ssh_options: [
                 'StrictHostKeyChecking=no'
