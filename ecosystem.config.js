@@ -11,10 +11,10 @@ module.exports = {
 
     deploy: {
         docker: {
-            user: 'linuxserver.io',
+            user: '${USER}',
             host: [{
-                'host': '172.17.0.2',
-                'port': '2222'
+                'host': 'localhost',
+                'port': '22'
             }],
             ssh_options: [
                 'StrictHostKeyChecking=no'
