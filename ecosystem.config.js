@@ -18,8 +18,8 @@ module.exports = {
             ssh_options: [
                 'StrictHostKeyChecking=no'
             ],
-            ref: 'origin/master',
-            repo: 'https://github.com/kaissi/pm2-teste.git',
+            ref: 'master',
+            repo: '.',
             path: '/workspace',
             'pre-setup': "./pre-setup.sh",
             'post-setup': "./post-setup.sh",
